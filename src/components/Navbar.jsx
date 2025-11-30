@@ -107,26 +107,24 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - FIXED */}
             <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
                   to={link.path}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 group ${
-                    isActiveRoute(link.path) 
-                      ? "bg-white/20 text-white shadow-md" 
-                      : "hover:bg-white/10 text-white/90 hover:text-white"
-                  } ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 group font-medium ${
                     isScrolled 
                       ? isActiveRoute(link.path)
-                        ? "bg-[#016B61] text-white shadow-md"
-                        : "text-[#016B61] hover:bg-[#016B61]/10 hover:text-[#016B61]"
-                      : ""
+                        ? "bg-[#016B61] text-white shadow-md" // Active state when scrolled
+                        : "text-[#016B61] hover:bg-[#016B61]/10 hover:text-[#016B61]" // Normal state when scrolled
+                      : isActiveRoute(link.path)
+                        ? "bg-white/20 text-white shadow-md" // Active state when not scrolled
+                        : "text-white/90 hover:bg-white/10 hover:text-white" // Normal state when not scrolled
                   }`}
                 >
                   <img src={link.logo} alt={link.name} className="w-4 h-4" />
-                  <span className="font-medium">{link.name}</span>
+                  <span>{link.name}</span>
                 </Link>
               ))}
             </div>
