@@ -10,7 +10,7 @@ const Navbar = () => {
   const { cartCount } = useCart();
   const navLinks = [
     { name: "Home", path: "/", logo: "/icon/home.svg" },
-    { name: "Products", path: "/products", logo: "/icon/products.svg" },
+    { name: "Items", path: "/items", logo: "/icon/products.svg" },
     { name: "Contact", path: "/contact", logo: "/icon/contact.svg" },
   ];
 

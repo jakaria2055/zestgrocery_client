@@ -238,7 +238,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                 >
                   <a
-                    href={`/${item.toLowerCase()}`}
+                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                     className="flex items-center group hover:text-white transition-all duration-300"
                   >
                     <motion.div 
